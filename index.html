@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+  <title>Kebab House</title>
+  <meta name="description" content="Fresh, fast, and loaded kebabs. Best kebab in town – ready in 10 minutes. Order online now.">
+
+  <link rel="stylesheet" href="styles.css">
+
+  <!-- TailwindCSS -->
+  <script src="[cdn.tailwindcss.com](https://cdn.tailwindcss.com)"></script>
+
+  <!-- Font Awesome Icons -->
+  <link rel="stylesheet" href="[cdnjs.cloudflare.com](https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css)">
+
+</head>
+
+<body class="bg-gray-100 text-gray-900">
+
+<!-- NAVBAR -->
+<header class="bg-white shadow-md fixed top-0 left-0 right-0 z-40">
+  <div class="max-w-6xl mx-auto px-4 py-4 flex items-center justify-between">
+    <h1 class="text-2xl font-bold">Kebab House</h1>
+    <button onclick="toggleCart()" class="relative">
+      <i class="fa fa-shopping-bag text-2xl"></i>
+      <span id="cart-count" class="absolute -top-2 -right-2 bg-red-500 text-white text-xs rounded-full px-2">0</span>
+    </button>
+  </div>
+</header>
+
+<div class="pt-20"></div>
+
+<!-- HERO -->
+<section class="bg-white">
+  <div class="max-w-6xl mx-auto px-6 py-16 grid md:grid-cols-2 gap-10 items-center">
+    <div>
+      <h2 class="text-4xl md:text-5xl font-extrabold mb-4">Best Kebab in Your City – Ready in 10 Minutes</h2>
+      <p class="text-lg mb-6">Order online or skip the line. Fresh, fast, and loaded.</p>
+      <div class="flex gap-4">
+        <a href="#menu" class="bg-red-600 text-white px-6 py-3 rounded-lg text-lg font-bold">Order Now</a>
+        <a href="#menu" class="bg-gray-200 px-6 py-3 rounded-lg text-lg font-bold">View Menu</a>
+      </div>
+    </div>
+    <img src="assets/hero.jpg" class="rounded-xl shadow-lg">
+  </div>
+</section>
+
+<!-- POPULAR ITEMS -->
+<section id="menu" class="py-16 bg-gray-50">
+  <div class="max-w-6xl mx-auto px-6">
+    <h3 class="text-3xl font-bold mb-8">Popular Items</h3>
+    <div class="grid md:grid-cols-3 gap-8">
+
+      <div class="bg-white rounded-lg shadow p-4">
+        <img src="assets/wrap.jpg" class="rounded-lg mb-4">
+        <h4 class="text-xl font-bold">Classic Kebab Wrap</h4>
+        <p class="text-gray-600 text-sm mb-2">Fresh salad, sauces, and juicy meat.</p>
+        <p class="text-lg font-bold mb-4">65 DKK</p>
+        <button onclick="addToCart('Classic Kebab Wrap', 65)" class="btn-red">Order</button>
+      </div>
+
+      <div class="bg-white rounded-lg shadow p-4">
+        <img src="assets/box.jpg" class="rounded-lg mb-4">
+        <h4 class="text-xl font-bold">Kebab Box</h4>
+        <p class="text-gray-600 text-sm mb-2">Meat, fries, salad, and sauces.</p>
+        <p class="text-lg font-bold mb-4">75 DKK</p>
+        <button onclick="addToCart('Kebab Box', 75')" class="btn-red">Order</button>
+      </div>
+
+      <div class="bg-white rounded-lg shadow p-4">
+        <img src="assets/menu.jpg" class="rounded-lg mb-4">
+        <h4 class="text-xl font-bold">Chicken Menu</h4>
+        <p class="text-gray-600 text-sm mb-2">Chicken wrap + fries + drink.</p>
+        <p class="text-lg font-bold mb-4">95 DKK</p>
+        <button onclick="addToCart('Chicken Menu', 95)" class="btn-red">Order</button>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- SOCIAL PROOF -->
+<section class="py-16 bg-white">
+  <div class="max-w-6xl mx-auto px-6">
+    <h3 class="text-3xl font-bold mb-6">What People Say</h3>
+    <div class="grid md:grid-cols-3 gap-6">
+
+      <div class="p-6 bg-gray-100 rounded-lg">“Best kebab I’ve ever had 🔥” – <b>Ahmed</b></div>
+      <div class="p-6 bg-gray-100 rounded-lg">“Fast service and huge portions!” – <b>Sofia</b></div>
+      <div class="p-6 bg-gray-100 rounded-lg">“Perfect for late‑night cravings.” – <b>Lucas</b></div>
+
+    </div>
+  </div>
+</section>
+
+<!-- WHY CHOOSE US -->
+<section class="py-16 bg-gray-50">
+  <div class="max-w-6xl mx-auto px-6">
+    <h3 class="text-3xl font-bold mb-10">Why Choose Us</h3>
+    <div class="grid md:grid-cols-4 gap-8 text-center">
+      <div><i class="fa fa-leaf text-4xl text-red-600 mb-3"></i><h4 class="font-bold">Fresh Ingredients</h4></div>
+      <div><i class="fa fa-bolt text-4xl text-red-600 mb-3"></i><h4 class="font-bold">Fast Service</h4></div>
+      <div><i class="fa fa-drumstick-bite text-4xl text-red-600 mb-3"></i><h4 class="font-bold">Big Portions</h4></div>
+      <div><i class="fa fa-moon text-4xl text-red-600 mb-3"></i><h4 class="font-bold">Open Late</h4></div>
+    </div>
+  </div>
+</section>
+
+<!-- LOCATION -->
+<section class="py-16 bg-white">
+  <div class="max-w-6xl mx-auto px-6 grid md:grid-cols-2 gap-10">
+    <div>
+      <h3 class="text-3xl font-bold mb-6">Visit Us</h3>
+      <p class="font-bold">Opening Hours:</p>
+      <p>Mon–Sun: 11:00 – 02:00</p>
+      <p class="mt-4">123 Main Street, Your City</p>
+      <a href="[maps.google.com](https://maps.google.com)" target="_blank" class="btn-red mt-4 inline-block">Get Directions</a>
+    </div>
+    <iframe class="w-full h-64 rounded-lg" src="[maps.google.com](https://maps.google.com/maps?q=London&z=13&output=embed)"></iframe>
+  </div>
+</section>
+
+<!-- MOBILE STICKY CTA -->
+<div class="sticky-cta md:hidden">
+  <button onclick="scrollToMenu()" class="w-full bg-red-600 text-white text-lg py-4 font-bold">Order Now</button>
+</div>
+
+<!-- CART SIDEBAR -->
+<div class="cart-overlay" onclick="toggleCart()"></div>
+
+<div id="cart" class="cart-panel">
+  <h3 class="text-2xl font-bold mb-4">Your Order</h3>
+  <div id="cart-items" class="mb-6"></div>
+  <p class="text-xl font-bold mb-4">Total: <span id="total">0</span> DKK</p>
+  <button class="btn-red w-full">Checkout</button>
+</div>
+
+<script src="script.js"></script>
+
+</body>
+</html>
