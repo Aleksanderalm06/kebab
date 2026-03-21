@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Checkout — Kebabistan</title>
+  <link rel="stylesheet" href="styles.css">
+  <script src="[cdn.tailwindcss.com](https://cdn.tailwindcss.com)"></script>
+  <link href="[fonts.googleapis.com](https://fonts.googleapis.com/css2?family=Anton&family=Inter:wght@300;400;600;700&display=swap)" rel="stylesheet">
+</head>
+<body class="bg-[#0c0c0c] text-white">
+<header class="bg-black border-b-4 border-red-600 py-5 px-6">
+  <h1 class="text-4xl font-anton text-red-500 cursor-pointer" onclick="window.location='index.html'">CHECKOUT</h1>
+</header>
+<section class="max-w-4xl mx-auto px-6 py-14">
+  <h2 class="text-5xl font-anton text-red-500 mb-10">YOUR DETAILS</h2>
+  <form>
+    <label class="checkout-label">Full Name</label>
+    <input class="checkout-input" placeholder="John Doe">
+    <label class="checkout-label">Phone Number</label>
+    <input class="checkout-input" placeholder="+45 12 34 56 78">
+    <label class="checkout-label">Pickup or Delivery</label>
+    <select class="checkout-input">
+      <option>Pickup</option>
+      <option>Delivery</option>
+    </select>
+    <label class="checkout-label">Address (if delivery)</label>
+    <input class="checkout-input" placeholder="Street, city">
+    <h2 class="text-5xl font-anton text-red-500 mt-14 mb-6">ORDER SUMMARY</h2>
+    <div class="summary-box">
+      <p class="text-lg opacity-80">Your selected items will appear here.</p>
+    </div>
+    <h2 class="text-5xl font-anton text-red-500 mt-14 mb-6">PAYMENT</h2>
+    <div class="grid md:grid-cols-2 gap-6">
+      <button type="button" onclick="confirmOrder()" class="btn-red text-2xl py-6">PAY WITH CARD</button>
+      <button type="button" onclick="confirmOrder()" class="btn-yellow text-2xl py-6">MOBILEPAY</button>
+    </div>
+  </form>
+</section>
+<script>
+function confirmOrder() {
+  window.location = "confirmation.html";
+}
+</script>
+</body>
+</html>
