@@ -6,8 +6,8 @@
   <title>Om os – Chili Kebab Roskilde</title>
   <link rel="stylesheet" href="styles.css">
   <script src="script.js" defer></script>
-  <script src="[cdn.tailwindcss.com](https://cdn.tailwindcss.com)"></script>
-  <link href="[fonts.googleapis.com](https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;800&family=Montserrat:wght@700;900&display=swap)" rel="stylesheet">
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;800&family=Montserrat:wght@700;900&display=swap" rel="stylesheet">
 </head>
 <body class="bg-white text-gray-900">
 <!-- NAVBAR -->
@@ -20,6 +20,7 @@
       <a href="index.html" class="hover:text-red-600">Hjem</a>
       <a href="menu.html" class="hover:text-red-600">Menu</a>
       <a href="om-os.html" class="hover:text-red-600 text-red-600">Om os</a>
+      <a href="kontakt.html" class="hover:text-red-600">Kontakt</a>
       <button onclick="toggleCart()" class="relative">
         <span class="material-icons text-3xl text-red-600">shopping_cart</span>
         <span id="cart-count"
@@ -31,8 +32,9 @@
 <div class="pt-24"></div>
 <!-- HERO -->
 <section class="relative">
-  <img src="[images.unsplash.com](https://images.unsplash.com/photo-1514933651103-005eec06c04b)"
+  <img src="https://images.unsplash.com/photo-1514933651103-005eec06c04b"
        class="w-full h-[420px] object-cover brightness-75">
+  <div class="absolute inset-0 hero-overlay"></div>
   <div class="absolute inset-0 flex items-center justify-center">
     <h2 class="text-5xl md:text-6xl font-extrabold text-white drop-shadow-xl">
       Om Chili Kebab Roskilde
@@ -54,8 +56,10 @@
     Derfor bruger vi kun friske grøntsager, vores egne krydderiblandinger og hjemmelavede dressinger.
     Alle vores pitabrød og durum bliver rullet og varmet, så de er perfekt sprøde og bløde.
   </p>
-  <img src="[images.unsplash.com](https://images.unsplash.com/photo-1550547660-d9450f859349)"
-       class="w-full rounded-xl shadow-xl my-12">
+  <div class="bg-warm rounded-xl p-2 my-12">
+    <img src="https://images.unsplash.com/photo-1550547660-d9450f859349?w=1200&h=600&fit=crop"
+         class="w-full rounded-lg shadow-xl">
+  </div>
   <h3 class="text-4xl font-extrabold text-red-600 mb-6">Hvorfor vælge os?</h3>
   <ul class="list-disc ml-6 space-y-3">
     <li>Hurtig service og fair priser</li>
@@ -64,19 +68,21 @@
     <li>Alt laves på bestilling</li>
     <li>Daglige åbningstider – altid klar til at servere</li>
   </ul>
-  <img src="[images.unsplash.com](https://images.unsplash.com/photo-1546793665-c74683f339c1)"
-       class="w-full rounded-xl shadow-xl my-12">
+  <div class="bg-warm rounded-xl p-2 my-12">
+    <img src="https://images.unsplash.com/photo-1546793665-c74683f339c1?w=1200&h=600&fit=crop"
+         class="w-full rounded-lg shadow-xl">
+  </div>
   <h3 class="text-4xl font-extrabold text-red-600 mb-6">Find os</h3>
-  <p class="mb-4">
-    📍 Stændertorvet 12, 4000 Roskilde  
-    📞 +45 12 34 56 78  
-    🕒 Alle dage: 11:00 – 23:00
-  </p>
+  <div class="bg-warm rounded-xl p-8 border border-warm">
+    <p class="mb-2">Skomagergade 50A, 4000 Roskilde</p>
+    <p class="mb-2">+45 12 34 56 78</p>
+    <p>Alle dage: 11:00 – 23:00</p>
+  </div>
 </section>
 <!-- FOOTER -->
-<footer class="bg-gray-100 py-10 text-center text-gray-700">
+<footer class="site-footer py-10 text-center text-gray-700">
   <p class="text-lg font-bold">Chili Kebab Roskilde</p>
-  <p>Stændertorvet 12, 4000 Roskilde</p>
+  <p>Skomagergade 50A, 4000 Roskilde</p>
   <p>Tlf: +45 12 34 56 78</p>
 </footer>
 <!-- KURV -->

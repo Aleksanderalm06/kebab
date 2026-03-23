@@ -11,15 +11,18 @@ body {
 .category-pill {
   padding: 10px 20px;
   border-radius: 40px;
-  background: #f3f3f3;
+  background: #FDF6E3;
   font-weight: 600;
+  border: 1px solid #E8D5A3;
 }
 .category-pill:hover {
-  background: #ffe0e0;
+  background: #C9A84C;
+  color: white;
 }
 .active-pill {
-  background: #c1121f !important;
+  background: #C9A84C !important;
   color: white !important;
+  border-color: #C9A84C !important;
 }
 /* PRODUKTKORT */
 .food-card {
@@ -28,11 +31,11 @@ body {
   overflow: hidden;
   transition: 0.25s;
   cursor: pointer;
-  border: 1px solid #eee;
+  border: 1px solid #E8D5A3;
 }
 .food-card:hover {
   transform: scale(1.03);
-  box-shadow: 0px 5px 20px rgba(0,0,0,0.15);
+  box-shadow: 0px 5px 20px rgba(201, 168, 76, 0.25);
 }
 .food-img {
   width: 100%;
@@ -50,6 +53,31 @@ body {
   color: #c1121f;
   font-size: 22px;
   font-weight: 800;
+}
+/* KATEGORI KORT */
+.category-card {
+  display: block;
+  border-radius: 16px;
+  overflow: hidden;
+  position: relative;
+  transition: 0.25s;
+}
+.category-card:hover {
+  transform: scale(1.03);
+  box-shadow: 0px 5px 20px rgba(201, 168, 76, 0.25);
+}
+.category-img {
+  width: 100%;
+  height: 240px;
+  object-fit: cover;
+}
+.category-title {
+  font-size: 24px;
+  font-weight: 800;
+  text-align: center;
+  padding: 16px;
+  background: white;
+  border-top: 3px solid #C9A84C;
 }
 /* KURV */
 .cart-overlay {
@@ -87,14 +115,14 @@ body.cart-open #cart { transform: translateX(0); }
   transform: scale(1.03);
 }
 .btn-yellow {
-  background: #ffcc00;
-  color: #333;
+  background: #C9A84C;
+  color: #fff;
   font-weight: 700;
   border-radius: 12px;
   transition: 0.25s;
 }
 .btn-yellow:hover {
-  background: #e6b800;
+  background: #B8973D;
   transform: scale(1.03);
 }
 .btn-red-small {
@@ -106,9 +134,10 @@ body.cart-open #cart { transform: translateX(0); }
 }
 /* CHECKOUT */
 .checkout-box {
-  background: #fafafa;
+  background: #FDF6E3;
   padding: 30px;
   border-radius: 18px;
+  border: 1px solid #E8D5A3;
 }
 .checkout-label {
   font-weight: 700;
@@ -122,10 +151,61 @@ body.cart-open #cart { transform: translateX(0); }
   background: white;
   margin-top: 4px;
 }
+.checkout-input:focus {
+  outline: none;
+  border-color: #C9A84C;
+  box-shadow: 0 0 0 2px rgba(201, 168, 76, 0.25);
+}
 /* ORDREOVERSIGT */
 .summary-box {
   background: white;
   padding: 20px;
   border-radius: 16px;
-  border: 1px solid #ddd;
+  border: 1px solid #E8D5A3;
+}
+/* KONTAKT */
+.contact-label {
+  font-weight: 700;
+  display: block;
+  margin-bottom: 4px;
+}
+.contact-input {
+  width: 100%;
+  padding: 12px;
+  border-radius: 10px;
+  border: 1px solid #ccc;
+  background: white;
+}
+.contact-input:focus {
+  outline: none;
+  border-color: #C9A84C;
+  box-shadow: 0 0 0 2px rgba(201, 168, 76, 0.25);
+}
+/* DUSTY YELLOW SECTION */
+.bg-warm {
+  background: #FDF6E3;
+}
+.border-warm {
+  border-color: #E8D5A3;
+}
+.text-dusty-yellow {
+  color: #C9A84C;
+}
+/* FOOTER */
+.site-footer {
+  background: #FDF6E3;
+  border-top: 3px solid #C9A84C;
+}
+/* MENU CATEGORY TITLE */
+.cat-title {
+  font-size: 32px;
+  font-weight: 800;
+  color: #c1121f;
+  padding-bottom: 12px;
+  border-bottom: 3px solid #C9A84C;
+  display: inline-block;
+}
+/* HERO OVERLAY */
+.hero-overlay {
+  background: linear-gradient(to bottom, rgba(0,0,0,0.35), rgba(0,0,0,0.55));
 }
