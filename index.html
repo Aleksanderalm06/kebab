@@ -1,101 +1,92 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="da">
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Kebabistan</title>
-  <meta name="description" content="Urban kebab menu. Order fast. Pickup or delivery." />
+  <title>Chili Kebab – Roskilde</title>
   <link rel="stylesheet" href="styles.css">
+  <script src="script.js" defer></script>
   <script src="[cdn.tailwindcss.com](https://cdn.tailwindcss.com)"></script>
-  <link href="[fonts.googleapis.com](https://fonts.googleapis.com/css2?family=Anton&family=Inter:wght@300;400;600;700&display=swap)" rel="stylesheet">
-  <link rel="stylesheet" href="[cdnjs.cloudflare.com](https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css)">
+  <link href="[fonts.googleapis.com](https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;800&family=Montserrat:wght@700;900&display=swap)" rel="stylesheet">
 </head>
-<body class="bg-[#0c0c0c] text-white">
-<header class="fixed top-0 left-0 right-0 z-50 bg-black border-b-4 border-red-600 shadow-xl">
-  <div class="max-w-7xl mx-auto px-6 py-4 flex justify-between items-center">
-    <h1 class="text-4xl font-anton tracking-widest text-red-500 cursor-pointer" onclick="window.location='index.html'">KEBABISTAN</h1>
-    <button onclick="toggleCart()" class="relative hover:scale-110 transition">
-      <i class="fa fa-shopping-cart text-4xl text-red-500"></i>
-      <span id="cart-count" class="absolute -top-3 -right-3 bg-red-600 text-white text-sm rounded-full px-2 py-1">0</span>
-    </button>
+<body class="bg-white text-gray-900">
+<header class="shadow-md bg-white fixed top-0 left-0 right-0 z-50">
+  <div class="max-w-7xl mx-auto px-6 py-4 flex items-center justify-between">
+    <h1 onclick="goHome()" class="text-3xl font-bold tracking-tight text-red-600 cursor-pointer">
+      Chili Kebab
+    </h1>
+    <div class="flex items-center gap-6">
+      <button onclick="window.location='menu.html'" class="font-semibold hover:text-red-600">
+        Menu
+      </button>
+      <button onclick="toggleCart()" class="relative">
+        <span class="material-icons text-3xl text-red-600">shopping_cart</span>
+        <span id="cart-count"
+          class="absolute -top-2 -right-2 bg-red-600 text-white text-xs px-2 py-0.5 rounded-full">0</span>
+      </button>
+    </div>
   </div>
 </header>
 <div class="pt-24"></div>
-<section class="hero relative bg-cover bg-center" style="background-image:url('[images.unsplash.com](https://images.unsplash.com/photo-1606756790138-57d1363e0b02)');">
-  <div class="absolute inset-0 bg-black/70"></div>
-  <div class="relative max-w-7xl mx-auto px-6 py-32 text-center">
-    <h2 class="text-7xl font-anton text-red-500 drop-shadow-xl">KEBAB. LOADED. LOUD.</h2>
-    <p class="text-xl mt-4 opacity-90">Urban kebab experience — heavy portions, fast service.</p>
-    <div class="mt-8 flex justify-center gap-6">
-      <a href="#menu" class="btn-red text-2xl px-10 py-4">ORDER NOW</a>
-      <a href="#menu" class="btn-yellow text-2xl px-10 py-4">VIEW MENU</a>
-    </div>
+<section class="relative">
+  <img src="assets/hero.jpg"
+       class="w-full h-[450px] object-cover brightness-75">
+  <div class="absolute inset-0 flex flex-col items-center justify-center text-center text-white px-6">
+    <h2 class="text-5xl font-bold mb-4 drop-shadow-lg">Velkommen til Chili Kebab Roskilde</h2>
+    <p class="text-lg mb-6">Frisklavede specialiteter, hurtig service og store portioner.</p>
+    <a href="menu.html" class="btn-red text-xl px-8 py-4 rounded-xl">Se Menu</a>
   </div>
 </section>
-<nav class="bg-black border-t border-red-600 shadow-md sticky top-[80px] z-40">
-  <div class="max-w-7xl mx-auto px-6 py-4 flex gap-6 overflow-x-auto whitespace-nowrap">
-    <button onclick="scrollToCategory('wraps')" class="cat-btn">WRAPS</button>
-    <button onclick="scrollToCategory('boxes')" class="cat-btn">BOXES</button>
-    <button onclick="scrollToCategory('menus')" class="cat-btn">MENUS</button>
-    <button onclick="scrollToCategory('sides')" class="cat-btn">SIDES</button>
-    <button onclick="scrollToCategory('drinks')" class="cat-btn">DRINKS</button>
-  </div>
-</nav>
-<section id="menu" class="max-w-7xl mx-auto px-6 py-20">
-  <div class="category-block" id="wraps">
-    <h3 class="cat-title">WRAPS</h3>
-    <div class="grid md:grid-cols-3 gap-10 mt-10">
-      <div class="food-card" onclick="openProduct('Classic Wrap', 65, '[images.unsplash.com](https://images.unsplash.com/photo-1604908177522-040235eff9cf)')">
-        <img src="[images.unsplash.com](https://images.unsplash.com/photo-1604908177522-040235eff9cf)" class="food-img">
-        <div class="p-6">
-          <h4 class="food-title">CLASSIC WRAP</h4>
-          <p class="food-desc">Heavy portion. Rich sauces. Urban style.</p>
-          <p class="food-price">65 DKK</p>
-        </div>
-      </div>
-      <div class="food-card" onclick="openProduct('Mega Wrap', 85, '[images.unsplash.com](https://images.unsplash.com/photo-1551892589-865f69869443)')">
-        <img src="[images.unsplash.com](https://images.unsplash.com/photo-1551892589-865f69869443)" class="food-img">
-        <div class="p-6">
-          <h4 class="food-title">MEGA WRAP</h4>
-          <p class="food-desc">Double meat. Double flavour. No mercy.</p>
-          <p class="food-price">85 DKK</p>
+<section class="max-w-7xl mx-auto px-6 py-16">
+  <h3 class="section-title">Bestsellere</h3>
+  <div class="grid md:grid-cols-3 gap-10 mt-10">
+    <div class="food-card">
+      <img src="assets/pita.jpg" class="food-img">
+      <div class="p-6">
+        <h4 class="food-title">Hjemmelavet Pitabrød</h4>
+        <p class="food-desc">Friskbagt pitabrød fyldt med kebab, salat og dressing.</p>
+        <div class="flex justify-between items-center mt-4">
+          <p class="food-price">65 kr.</p>
+          <button onclick="addToCart('Hjemmelavet Pitabrød', 65)" class="btn-red-small">Tilføj</button>
         </div>
       </div>
     </div>
-  </div>
-  <div class="category-block" id="boxes">
-    <h3 class="cat-title">BOXES</h3>
-    <div class="grid md:grid-cols-3 gap-10 mt-10">
-      <div class="food-card" onclick="openProduct('Kebab Box', 75, '[images.unsplash.com](https://images.unsplash.com/photo-1606756790464-96d08f73e225)')">
-        <img src="[images.unsplash.com](https://images.unsplash.com/photo-1606756790464-96d08f73e225)" class="food-img">
-        <div class="p-6">
-          <h4 class="food-title">KEBAB BOX</h4>
-          <p class="food-desc">Fries, salad, sauces, meat. Full power.</p>
-          <p class="food-price">75 DKK</p>
+    <div class="food-card">
+      <img src="assets/durum.jpg" class="food-img">
+      <div class="p-6">
+        <h4 class="food-title">Hjemmelavet Durum</h4>
+        <p class="food-desc">Rullet, smagfuld og helt frisk fra grillen.</p>
+        <div class="flex justify-between items-center mt-4">
+          <p class="food-price">75 kr.</p>
+          <button onclick="addToCart('Hjemmelavet Durum', 75)" class="btn-red-small">Tilføj</button>
+        </div>
+      </div>
+    </div>
+    <div class="food-card">
+      <img src="assets/box.jpg" class="food-img">
+      <div class="p-6">
+        <h4 class="food-title">Kebab Box</h4>
+        <p class="food-desc">Stor portion med kød, pommes, salat og dressing.</p>
+        <div class="flex justify-between items-center mt-4">
+          <p class="food-price">85 kr.</p>
+          <button onclick="addToCart('Kebab Box', 85)" class="btn-red-small">Tilføj</button>
         </div>
       </div>
     </div>
   </div>
 </section>
-<div class="sticky-cta md:hidden">
-  <button onclick="scrollToMenu()" class="w-full bg-red-600 py-4 text-white text-xl font-bold">ORDER NOW</button>
-</div>
+<footer class="bg-gray-100 py-10 mt-20 text-center text-gray-700">
+  <p class="font-semibold text-lg">Chili Kebab Roskilde</p>
+  <p>Adresse: Stændertorvet 12, 4000 Roskilde</p>
+  <p>Tlf: +45 12 34 56 78</p>
+  <p class="mt-4 text-sm opacity-70">© 2024 Chili Kebab – Alle rettigheder forbeholdes</p>
+</footer>
 <div class="cart-overlay" onclick="toggleCart()"></div>
 <div id="cart" class="cart-panel">
-  <h3 class="text-4xl font-anton text-red-500 mb-4">YOUR ORDER</h3>
+  <h3 class="text-3xl font-bold text-red-600 mb-4">Din kurv</h3>
   <div id="cart-items" class="mb-6"></div>
-  <p class="text-2xl font-bold">Total: <span id="total">0</span> DKK</p>
-  <a href="checkout.html" class="btn-red block text-center w-full mt-6 py-4 text-xl">GO TO CHECKOUT</a>
+  <p class="text-xl font-bold">Total: <span id="total">0</span> kr.</p>
+  <a href="checkout.html" class="btn-red block text-center w-full mt-6 py-4 text-xl rounded-lg">Gå til betaling</a>
 </div>
-<div id="product-modal" class="product-modal hidden">
-  <div class="modal-content">
-    <img id="modal-img" class="modal-img">
-    <h2 id="modal-title" class="modal-title"></h2>
-    <p class="modal-price"></p>
-    <button id="modal-add" class="btn-red w-full mt-6 text-xl py-4">ADD TO CART</button>
-    <button onclick="closeProduct()" class="btn-outline w-full mt-4">CLOSE</button>
-  </div>
-</div>
-<script src="script.js"></script>
 </body>
 </html>
