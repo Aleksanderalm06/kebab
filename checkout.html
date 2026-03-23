@@ -1,46 +1,43 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="da">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Checkout — Kebabistan</title>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Betaling – Chili Kebab</title>
   <link rel="stylesheet" href="styles.css">
+  <script src="script.js" defer></script>
   <script src="[cdn.tailwindcss.com](https://cdn.tailwindcss.com)"></script>
-  <link href="[fonts.googleapis.com](https://fonts.googleapis.com/css2?family=Anton&family=Inter:wght@300;400;600;700&display=swap)" rel="stylesheet">
+  <link href="[fonts.googleapis.com](https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;800&family=Montserrat:wght@700;900&display=swap)" rel="stylesheet">
 </head>
-<body class="bg-[#0c0c0c] text-white">
-<header class="bg-black border-b-4 border-red-600 py-5 px-6">
-  <h1 class="text-4xl font-anton text-red-500 cursor-pointer" onclick="window.location='index.html'">CHECKOUT</h1>
+<body class="bg-white text-gray-900">
+<header class="shadow-md bg-white fixed top-0 left-0 right-0 z-50">
+  <div class="max-w-4xl mx-auto px-6 py-4 flex items-center justify-between">
+    <h1 onclick="goHome()" class="text-3xl font-bold text-red-600 cursor-pointer">Chili Kebab</h1>
+  </div>
 </header>
-<section class="max-w-4xl mx-auto px-6 py-14">
-  <h2 class="text-5xl font-anton text-red-500 mb-10">YOUR DETAILS</h2>
-  <form>
-    <label class="checkout-label">Full Name</label>
-    <input class="checkout-input" placeholder="John Doe">
-    <label class="checkout-label">Phone Number</label>
-    <input class="checkout-input" placeholder="+45 12 34 56 78">
-    <label class="checkout-label">Pickup or Delivery</label>
-    <select class="checkout-input">
-      <option>Pickup</option>
-      <option>Delivery</option>
+<div class="pt-24"></div>
+<section class="max-w-4xl mx-auto px-6 py-12">
+  <h2 class="text-4xl font-bold text-red-600 mb-10">Dine oplysninger</h2>
+  <div class="checkout-box">
+    <label class="checkout-label">Navn</label>
+    <input id="name" class="checkout-input" placeholder="Dit navn">
+    <label class="checkout-label">Telefonnummer</label>
+    <input id="phone" class="checkout-input" placeholder="+45 12 34 56 78">
+    <label class="checkout-label">Leveringstype</label>
+    <select id="type" class="checkout-input">
+      <option value="Afhentning">Afhentning</option>
+      <option value="Levering">Levering</option>
     </select>
-    <label class="checkout-label">Address (if delivery)</label>
-    <input class="checkout-input" placeholder="Street, city">
-    <h2 class="text-5xl font-anton text-red-500 mt-14 mb-6">ORDER SUMMARY</h2>
-    <div class="summary-box">
-      <p class="text-lg opacity-80">Your selected items will appear here.</p>
-    </div>
-    <h2 class="text-5xl font-anton text-red-500 mt-14 mb-6">PAYMENT</h2>
+    <label class="checkout-label">Adresse (ved levering)</label>
+    <input id="address" class="checkout-input" placeholder="Gade, nummer, etage">
+    <h2 class="text-4xl font-bold text-red-600 mt-12 mb-6">Ordreoversigt</h2>
+    <div id="summary" class="summary-box"></div>
+    <h2 class="text-4xl font-bold text-red-600 mt-12 mb-6">Betaling</h2>
     <div class="grid md:grid-cols-2 gap-6">
-      <button type="button" onclick="confirmOrder()" class="btn-red text-2xl py-6">PAY WITH CARD</button>
-      <button type="button" onclick="confirmOrder()" class="btn-yellow text-2xl py-6">MOBILEPAY</button>
+      <button onclick="confirmOrder()" class="btn-red text-xl py-4">Kortbetaling</button>
+      <button onclick="confirmOrder()" class="btn-yellow text-xl py-4">MobilePay</button>
     </div>
-  </form>
+  </div>
 </section>
-<script>
-function confirmOrder() {
-  window.location = "confirmation.html";
-}
-</script>
 </body>
 </html>
