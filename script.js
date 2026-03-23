@@ -1,36 +1,57 @@
-let cart = [];
+let cart = JSON.parse(localStorage.getItem("cart")) || [];
+/* GEM & OPDATER */
+function save() {
+  localStorage.setItem("cart", JSON.stringify(cart));
+}
+/* GÅ HJEM */
+function goHome() {
+  window.location = "index.html";
+}
+/* ÅBN / LUK KURV */
+function toggleCart() {
+  document.body.classList.toggle("cart-open");
+  updateCart();
+}
+/* TILFØJ TIL KURV */
 function addToCart(name, price) {
   cart.push({ name, price });
+  save();
   updateCart();
   document.body.classList.add("cart-open");
 }
+/* OPDATER KURV */
 function updateCart() {
   const items = document.getElementById("cart-items");
+  const total = document.getElementById("total");
+  const count = document.getElementById("cart-count");
+  if (!items) return;
   items.innerHTML = cart
-    .map(i => `<p class="border-b border-red-600 py-2">${i.name} — ${i.price} DKK</p>`)
+    .map(i => `<div class='py-2 border-b'>${i.name} – ${i.price} kr.</div>`)
     .join("");
-  document.getElementById("cart-count").innerText = cart.length;
-  document.getElementById("total").innerText = cart.reduce((s, i) => s + i.price, 0);
+  if (total) total.innerText = cart.reduce((s,i)=> s+i.price, 0);
+  if (count) count.innerText = cart.length;
+  save();
 }
-function toggleCart() {
-  document.body.classList.toggle("cart-open");
-}
-function scrollToMenu() {
-  document.getElementById("menu").scrollIntoView({ behavior: "smooth" });
-}
+/* SCROLL TIL KATEGORI */
 function scrollToCategory(id) {
   document.getElementById(id).scrollIntoView({ behavior: "smooth" });
 }
-function openProduct(name, price, img) {
-  document.getElementById("modal-title").innerText = name;
-  document.querySelector(".modal-price").innerText = price + " DKK";
-  document.getElementById("modal-img").src = img;
-  document.getElementById("modal-add").onclick = () => {
-    addToCart(name, price);
-    closeProduct();
-  };
-  document.getElementById("product-modal").classList.remove("hidden");
+/* CHECKOUT: UDFYLD OVERSIGT */
+if (window.location.pathname.includes("checkout")) {
+  const summary = document.getElementById("summary");
+  summary.innerHTML = cart
+    .map(i => `<div class='py-2 border-b'>${i.name} – ${i.price} kr.</div>`)
+    .join("");
 }
-function closeProduct() {
-  document.getElementById("product-modal").classList.add("hidden");
+/* BEKRÆFT ORDRE */
+function confirmOrder() {
+  if (!cart.length) {
+    alert("Din kurv er tom.");
+    return;
+  }
+  cart = [];
+  save();
+  window.location = "confirmation.html";
 }
+/* INITIALISERING */
+updateCart();
