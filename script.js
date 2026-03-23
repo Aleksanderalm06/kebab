@@ -19,6 +19,16 @@ function addToCart(name, price) {
   updateCart();
   document.body.classList.add("cart-open");
 }
+/* ÅBN PRODUKT (tilføj direkte til kurv) */
+function openProduct(name, price, img) {
+  addToCart(name, price);
+}
+/* FJERN FRA KURV */
+function removeFromCart(index) {
+  cart.splice(index, 1);
+  save();
+  updateCart();
+}
 /* OPDATER KURV */
 function updateCart() {
   const items = document.getElementById("cart-items");
@@ -26,7 +36,10 @@ function updateCart() {
   const count = document.getElementById("cart-count");
   if (!items) return;
   items.innerHTML = cart
-    .map(i => `<div class='py-2 border-b'>${i.name} – ${i.price} kr.</div>`)
+    .map((i, idx) => `<div class='cart-item py-2 border-b flex justify-between items-center'>
+      <span>${i.name} – ${i.price} kr.</span>
+      <button onclick="removeFromCart(${idx})" class="remove-btn" title="Fjern">&times;</button>
+    </div>`)
     .join("");
   if (total) total.innerText = cart.reduce((s,i)=> s+i.price, 0);
   if (count) count.innerText = cart.length;
