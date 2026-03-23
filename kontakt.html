@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="da">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Kontakt – Chili Kebab Roskilde</title>
+  <link rel="stylesheet" href="styles.css">
+  <script src="script.js" defer></script>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;800&family=Montserrat:wght@700;900&display=swap" rel="stylesheet">
+</head>
+<body class="bg-white text-gray-900">
+<!-- NAVBAR -->
+<header class="shadow-md bg-white fixed top-0 left-0 right-0 z-50">
+  <div class="max-w-7xl mx-auto px-6 py-4 flex items-center justify-between">
+    <h1 onclick="goHome()" class="text-3xl font-extrabold tracking-tight text-red-600 cursor-pointer">
+      Chili Kebab
+    </h1>
+    <nav class="flex items-center gap-6 text-lg font-semibold">
+      <a href="index.html" class="hover:text-red-600">Hjem</a>
+      <a href="menu.html" class="hover:text-red-600">Menu</a>
+      <a href="om-os.html" class="hover:text-red-600">Om os</a>
+      <a href="kontakt.html" class="hover:text-red-600 text-red-600">Kontakt</a>
+      <button onclick="toggleCart()" class="relative">
+        <span class="material-icons text-3xl text-red-600">shopping_cart</span>
+        <span id="cart-count"
+              class="absolute -top-2 -right-2 bg-red-600 text-white text-xs px-2 py-0.5 rounded-full">0</span>
+      </button>
+    </nav>
+  </div>
+</header>
+<div class="pt-24"></div>
+<!-- HERO -->
+<section class="relative">
+  <img src="https://images.unsplash.com/photo-1555396273-367ea4eb4db5"
+       class="w-full h-[420px] object-cover brightness-75">
+  <div class="absolute inset-0 hero-overlay"></div>
+  <div class="absolute inset-0 flex items-center justify-center">
+    <h2 class="text-5xl md:text-6xl font-extrabold text-white drop-shadow-xl">
+      Kontakt os
+    </h2>
+  </div>
+</section>
+<!-- CONTENT -->
+<section class="max-w-5xl mx-auto px-6 py-16">
+  <div class="grid md:grid-cols-2 gap-16">
+    <!-- INFO -->
+    <div>
+      <h3 class="text-4xl font-extrabold text-red-600 mb-6">Find os</h3>
+      <div class="space-y-6 text-lg leading-relaxed">
+        <div class="bg-warm rounded-xl p-6 border border-warm">
+          <h4 class="text-xl font-bold mb-1">Adresse</h4>
+          <p class="text-gray-700">Skomagergade 50A, 4000 Roskilde</p>
+        </div>
+        <div class="bg-warm rounded-xl p-6 border border-warm">
+          <h4 class="text-xl font-bold mb-1">Telefon</h4>
+          <p class="text-gray-700">+45 12 34 56 78</p>
+        </div>
+        <div class="bg-warm rounded-xl p-6 border border-warm">
+          <h4 class="text-xl font-bold mb-1">E-mail</h4>
+          <p class="text-gray-700">info@chilikebab-roskilde.dk</p>
+        </div>
+      </div>
+      <h3 class="text-4xl font-extrabold text-red-600 mt-12 mb-6">Åbningstider</h3>
+      <div class="text-lg space-y-2">
+        <div class="flex justify-between border-b border-gray-200 pb-2">
+          <span class="font-semibold">Mandag – Torsdag</span>
+          <span>11:00 – 22:00</span>
+        </div>
+        <div class="flex justify-between border-b border-gray-200 pb-2">
+          <span class="font-semibold">Fredag – Lørdag</span>
+          <span>11:00 – 23:00</span>
+        </div>
+        <div class="flex justify-between border-b border-gray-200 pb-2">
+          <span class="font-semibold">Søndag</span>
+          <span>12:00 – 22:00</span>
+        </div>
+      </div>
+    </div>
+    <!-- CONTACT FORM -->
+    <div>
+      <h3 class="text-4xl font-extrabold text-red-600 mb-6">Skriv til os</h3>
+      <form name="kontakt" method="POST" data-netlify="true" class="space-y-5">
+        <div>
+          <label class="contact-label">Navn</label>
+          <input type="text" name="navn" required class="contact-input" placeholder="Dit fulde navn">
+        </div>
+        <div>
+          <label class="contact-label">E-mail</label>
+          <input type="email" name="email" required class="contact-input" placeholder="din@email.dk">
+        </div>
+        <div>
+          <label class="contact-label">Telefon</label>
+          <input type="tel" name="telefon" class="contact-input" placeholder="+45 00 00 00 00">
+        </div>
+        <div>
+          <label class="contact-label">Besked</label>
+          <textarea name="besked" rows="5" required class="contact-input" placeholder="Skriv din besked her..."></textarea>
+        </div>
+        <button type="submit" class="btn-red w-full py-4 text-xl rounded-lg">Send besked</button>
+      </form>
+    </div>
+  </div>
+</section>
+<!-- FOOTER -->
+<footer class="site-footer py-10 text-center text-gray-700 mt-20">
+  <p class="text-lg font-bold">Chili Kebab Roskilde</p>
+  <p>Skomagergade 50A, 4000 Roskilde</p>
+  <p>Tlf: +45 12 34 56 78</p>
+</footer>
+<!-- KURV -->
+<div class="cart-overlay" onclick="toggleCart()"></div>
+<div id="cart" class="cart-panel">
+  <h3 class="text-3xl font-bold text-red-600 mb-4">Din kurv</h3>
+  <div id="cart-items" class="mb-6"></div>
+  <p class="text-xl font-bold">Total: <span id="total">0</span> kr.</p>
+  <a href="checkout.html" class="btn-red block text-center w-full mt-6 py-4 text-xl rounded-lg">Gå til betaling</a>
+</div>
+</body>
+</html>
