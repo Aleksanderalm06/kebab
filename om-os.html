@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="da">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Om os – Chili Kebab Roskilde</title>
+  <link rel="stylesheet" href="styles.css">
+  <script src="script.js" defer></script>
+  <script src="[cdn.tailwindcss.com](https://cdn.tailwindcss.com)"></script>
+  <link href="[fonts.googleapis.com](https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;800&family=Montserrat:wght@700;900&display=swap)" rel="stylesheet">
+</head>
+<body class="bg-white text-gray-900">
+<!-- NAVBAR -->
+<header class="shadow-md bg-white fixed top-0 left-0 right-0 z-50">
+  <div class="max-w-7xl mx-auto px-6 py-4 flex items-center justify-between">
+    <h1 onclick="goHome()" class="text-3xl font-extrabold tracking-tight text-red-600 cursor-pointer">
+      Chili Kebab
+    </h1>
+    <nav class="flex items-center gap-6 text-lg font-semibold">
+      <a href="index.html" class="hover:text-red-600">Hjem</a>
+      <a href="menu.html" class="hover:text-red-600">Menu</a>
+      <a href="om-os.html" class="hover:text-red-600 text-red-600">Om os</a>
+      <button onclick="toggleCart()" class="relative">
+        <span class="material-icons text-3xl text-red-600">shopping_cart</span>
+        <span id="cart-count"
+              class="absolute -top-2 -right-2 bg-red-600 text-white text-xs px-2 py-0.5 rounded-full">0</span>
+      </button>
+    </nav>
+  </div>
+</header>
+<div class="pt-24"></div>
+<!-- HERO -->
+<section class="relative">
+  <img src="[images.unsplash.com](https://images.unsplash.com/photo-1514933651103-005eec06c04b)"
+       class="w-full h-[420px] object-cover brightness-75">
+  <div class="absolute inset-0 flex items-center justify-center">
+    <h2 class="text-5xl md:text-6xl font-extrabold text-white drop-shadow-xl">
+      Om Chili Kebab Roskilde
+    </h2>
+  </div>
+</section>
+<!-- CONTENT -->
+<section class="max-w-5xl mx-auto px-6 py-16 text-lg leading-relaxed">
+  <h3 class="text-4xl font-extrabold text-red-600 mb-6">Vores historie</h3>
+  <p class="mb-8">
+    Chili Kebab i Roskilde startede med én mission: at lave den bedste kebab i byen.
+    Vi kombinerer traditionelle opskrifter med moderne fastfood-design og fokus på kvalitet.
+    Hver dag laver vi vores mad fra bunden – friske råvarer, hjemmelavede brød og
+    saftigt kød skåret direkte fra grillen.
+  </p>
+  <h3 class="text-4xl font-extrabold text-red-600 mb-6">Vores mad</h3>
+  <p class="mb-8">
+    Vi tror på, at god mad skal laves med kærlighed og respekt for håndværket.
+    Derfor bruger vi kun friske grøntsager, vores egne krydderiblandinger og hjemmelavede dressinger.
+    Alle vores pitabrød og durum bliver rullet og varmet, så de er perfekt sprøde og bløde.
+  </p>
+  <img src="[images.unsplash.com](https://images.unsplash.com/photo-1550547660-d9450f859349)"
+       class="w-full rounded-xl shadow-xl my-12">
+  <h3 class="text-4xl font-extrabold text-red-600 mb-6">Hvorfor vælge os?</h3>
+  <ul class="list-disc ml-6 space-y-3">
+    <li>Hurtig service og fair priser</li>
+    <li>Hjemmelavede brød og dressinger</li>
+    <li>Store portioner og friske råvarer</li>
+    <li>Alt laves på bestilling</li>
+    <li>Daglige åbningstider – altid klar til at servere</li>
+  </ul>
+  <img src="[images.unsplash.com](https://images.unsplash.com/photo-1546793665-c74683f339c1)"
+       class="w-full rounded-xl shadow-xl my-12">
+  <h3 class="text-4xl font-extrabold text-red-600 mb-6">Find os</h3>
+  <p class="mb-4">
+    📍 Stændertorvet 12, 4000 Roskilde  
+    📞 +45 12 34 56 78  
+    🕒 Alle dage: 11:00 – 23:00
+  </p>
+</section>
+<!-- FOOTER -->
+<footer class="bg-gray-100 py-10 text-center text-gray-700">
+  <p class="text-lg font-bold">Chili Kebab Roskilde</p>
+  <p>Stændertorvet 12, 4000 Roskilde</p>
+  <p>Tlf: +45 12 34 56 78</p>
+</footer>
+<!-- KURV -->
+<div class="cart-overlay" onclick="toggleCart()"></div>
+<div id="cart" class="cart-panel">
+  <h3 class="text-3xl font-bold text-red-600 mb-4">Din kurv</h3>
+  <div id="cart-items" class="mb-6"></div>
+  <p class="text-xl font-bold">Total: <span id="total">0</span> kr.</p>
+  <a href="checkout.html" class="btn-red block text-center w-full mt-6 py-4 text-xl rounded-lg">Gå til betaling</a>
+</div>
+</body>
+</html>
