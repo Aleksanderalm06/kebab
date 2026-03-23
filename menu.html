@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="da">
 <head>
-  <meta charset="UTF-8" />
+  <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Menu – Chili Kebab Roskilde</title>
   <link rel="stylesheet" href="styles.css">
@@ -10,132 +10,145 @@
   <link href="[fonts.googleapis.com](https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;800&family=Montserrat:wght@700;900&display=swap)" rel="stylesheet">
 </head>
 <body class="bg-white text-gray-900">
+<!-- NAVBAR -->
 <header class="shadow-md bg-white fixed top-0 left-0 right-0 z-50">
   <div class="max-w-7xl mx-auto px-6 py-4 flex items-center justify-between">
-    <h1 onclick="goHome()" class="text-3xl font-bold tracking-tight text-red-600 cursor-pointer">
+    <h1 onclick="goHome()" class="text-3xl font-extrabold tracking-tight text-red-600 cursor-pointer">
       Chili Kebab
     </h1>
-    <div class="flex items-center gap-6">
-      <button onclick="window.location='index.html'" class="font-semibold hover:text-red-600">
-        Hjem
-      </button>
+    <nav class="flex items-center gap-6 text-lg font-semibold">
+      <a href="index.html" class="hover:text-red-600">Hjem</a>
+      <a href="menu.html" class="hover:text-red-600 text-red-600">Menu</a>
+      <a href="om-os.html" class="hover:text-red-600">Om os</a>
       <button onclick="toggleCart()" class="relative">
         <span class="material-icons text-3xl text-red-600">shopping_cart</span>
         <span id="cart-count"
-          class="absolute -top-2 -right-2 bg-red-600 text-white text-xs px-2 py-0.5 rounded-full">0</span>
+              class="absolute -top-2 -right-2 bg-red-600 text-white text-xs px-2 py-0.5 rounded-full">0</span>
       </button>
-    </div>
+    </nav>
   </div>
 </header>
 <div class="pt-24"></div>
-<section class="max-w-7xl mx-auto px-6 py-16">
-  <h2 class="section-title">Menu</h2>
-  <!-- KATEGORIER -->
-  <div class="flex gap-4 overflow-x-auto py-4 mb-8 whitespace-nowrap">
-    <button class="category-pill active-pill" onclick="scrollToCategory('pita')">Pitabrød</button>
+<!-- MENU HEADER -->
+<section class="max-w-7xl mx-auto px-6 py-10">
+  <h2 class="section-title">Vores Menu</h2>
+  <p class="text-lg text-gray-600 mt-2">Frisklavet, hurtig og altid med store portioner.</p>
+</section>
+<!-- KATEGORIER -->
+<section class="max-w-7xl mx-auto px-6">
+  <div class="flex gap-4 overflow-x-auto whitespace-nowrap py-3 mb-8">
+    <button class="category-pill" onclick="scrollToCategory('pita')">Pitabrød</button>
     <button class="category-pill" onclick="scrollToCategory('durum')">Durum</button>
     <button class="category-pill" onclick="scrollToCategory('box')">Kebab Box</button>
     <button class="category-pill" onclick="scrollToCategory('sides')">Tilbehør</button>
     <button class="category-pill" onclick="scrollToCategory('drinks')">Drikkevarer</button>
   </div>
-  <!-- PITABRØD -->
-  <div id="pita" class="menu-category">
-    <h3 class="cat-title">Hjemmelavet Pitabrød</h3>
-    <div class="grid md:grid-cols-3 gap-10 mt-10">
-      <div class="food-card" onclick="openProduct('Hjemmelavet Pitabrød', 65, 'assets/yoad-shejtman-hw1BHHTgwx8-unsplash.jpeg')">
-        <img src="assets/yoad-shejtman-hw1BHHTgwx8-unsplash.jpeg" class="food-img">
-        <div class="p-6">
-          <h4 class="food-title">Kebab i pita</h4>
-          <p class="food-desc">Hjemmebagt pita med kebab, sprød salat og valgfri dressing.</p>
-          <p class="food-price">65 kr.</p>
-        </div>
+</section>
+<!-- PITABRØD -->
+<section id="pita" class="menu-section max-w-7xl mx-auto px-6 py-12">
+  <h3 class="cat-title">Pitabrød</h3>
+  <div class="grid md:grid-cols-3 gap-10 mt-10">
+    <div class="food-card">
+      <img src="assets/generated-image-1.png" class="food-img">
+      <div class="p-6">
+        <h4 class="food-title">Hjemmelavet Pitabrød</h4>
+        <p class="food-desc">Friskbagt pita fyldt med kebab, salat og dressing.</p>
+        <p class="food-price">65 kr.</p>
+        <button onclick="openProduct('Hjemmelavet Pitabrød', 65, 'assets/generated-image-1.png')" class="btn-red-small mt-4">Tilføj</button>
       </div>
-      <div class="food-card" onclick="openProduct('Kylling i pitabrød', 70, '[images.unsplash.com](https://images.unsplash.com/photo-1605478252901-ffcbb58b5bde)')">
-        <img src="[images.unsplash.com](https://images.unsplash.com/photo-1605478252901-ffcbb58b5bde)" class="food-img">
-        <div class="p-6">
-          <h4 class="food-title">Kylling i pita</h4>
-          <p class="food-desc">Saftig kylling, frisk hakket salat og chili-hvidløg dressing.</p>
-          <p class="food-price">70 kr.</p>
-        </div>
+    </div>
+    <div class="food-card">
+      <img src="[images.unsplash.com](https://images.unsplash.com/photo-1605478252901-ffcbb58b5bde)" class="food-img">
+      <div class="p-6">
+        <h4 class="food-title">Kylling i Pitabrød</h4>
+        <p class="food-desc">Grillet kylling, sprød salat og chili-hvidløg dressing.</p>
+        <p class="food-price">70 kr.</p>
+        <button onclick="openProduct('Kylling i Pitabrød', 70, '[images.unsplash.com](https://images.unsplash.com/photo-1605478252901-ffcbb58b5bde)')" class="btn-red-small mt-4">Tilføj</button>
       </div>
     </div>
   </div>
-  <!-- DURUM -->
-  <div id="durum" class="menu-category">
-    <h3 class="cat-title">Hjemmelavet Durum</h3>
-    <div class="grid md:grid-cols-3 gap-10 mt-10">
-      <div class="food-card" onclick="openProduct('Hjemmelavet Durum', 75, 'assets/durumrulle.jpg')">
-        <img src="assets/durumrulle.jpg" class="food-img">
-        <div class="p-6">
-          <h4 class="food-title">Durum Kebab</h4>
-          <p class="food-desc">Rullet og grillet — fyldt med smag.</p>
-          <p class="food-price">75 kr.</p>
-        </div>
+</section>
+<!-- DURUM -->
+<section id="durum" class="menu-section max-w-7xl mx-auto px-6 py-12">
+  <h3 class="cat-title">Durum</h3>
+  <div class="grid md:grid-cols-3 gap-10 mt-10">
+    <div class="food-card">
+      <img src="[images.unsplash.com](https://images.unsplash.com/photo-1571091718767-18b5b1457e56)" class="food-img">
+      <div class="p-6">
+        <h4 class="food-title">Hjemmelavet Durum</h4>
+        <p class="food-desc">Rullet, saftig og fyldt med frisk skåret kebab.</p>
+        <p class="food-price">75 kr.</p>
+        <button onclick="openProduct('Hjemmelavet Durum', 75, '[images.unsplash.com](https://images.unsplash.com/photo-1571091718767-18b5b1457e56)')" class="btn-red-small mt-4">Tilføj</button>
       </div>
     </div>
   </div>
-  <!-- KEBAB BOX -->
-  <div id="box" class="menu-category">
-    <h3 class="cat-title">Kebab Box</h3>
-    <div class="grid md:grid-cols-3 gap-10 mt-10">
-      <div class="food-card" onclick="openProduct('Kebab Box', 85, 'assets/box.jpg')">
-        <img src="assets/box.jpg" class="food-img">
-        <div class="p-6">
-          <h4 class="food-title">Klassisk Box</h4>
-          <p class="food-desc">Pommes, kebab, salat og to dressinger.</p>
-          <p class="food-price">85 kr.</p>
-        </div>
+</section>
+<!-- BOX -->
+<section id="box" class="menu-section max-w-7xl mx-auto px-6 py-12">
+  <h3 class="cat-title">Kebab Box</h3>
+  <div class="grid md:grid-cols-3 gap-10 mt-10">
+    <div class="food-card">
+      <img src="[images.unsplash.com](https://images.unsplash.com/photo-1606756790464-96d08f73e225)" class="food-img">
+      <div class="p-6">
+        <h4 class="food-title">Klassisk Kebab Box</h4>
+        <p class="food-desc">Pommes, kebab, salat og valgfri dressinger.</p>
+        <p class="food-price">85 kr.</p>
+        <button onclick="openProduct('Kebab Box', 85, '[images.unsplash.com](https://images.unsplash.com/photo-1606756790464-96d08f73e225)')" class="btn-red-small mt-4">Tilføj</button>
       </div>
     </div>
   </div>
-  <!-- SIDES -->
-  <div id="sides" class="menu-category">
-    <h3 class="cat-title">Tilbehør</h3>
-    <div class="grid md:grid-cols-3 gap-10 mt-10">
-      <div class="food-card" onclick="addToCart('Pommes Frites', 30)">
-        <img src="[images.unsplash.com](https://images.unsplash.com/photo-1550547660-d9450f859349)" class="food-img">
-        <div class="p-6">
-          <h4 class="food-title">Pommes Frites</h4>
-          <p class="food-price">30 kr.</p>
-        </div>
+</section>
+<!-- TILBEHØR -->
+<section id="sides" class="menu-section max-w-7xl mx-auto px-6 py-12">
+  <h3 class="cat-title">Tilbehør</h3>
+  <div class="grid md:grid-cols-3 gap-10 mt-10">
+    <div class="food-card">
+      <img src="[images.unsplash.com](https://images.unsplash.com/photo-1550547660-d9450f859349)" class="food-img">
+      <div class="p-6">
+        <h4 class="food-title">Pommes Frites</h4>
+        <p class="food-price">30 kr.</p>
+        <button onclick="addToCart('Pommes Frites', 30)" class="btn-red-small mt-4">Tilføj</button>
       </div>
-      <div class="food-card" onclick="addToCart('Chili Cheese Tops', 45)">
-        <img src="[images.unsplash.com](https://images.unsplash.com/photo-1598514980878-4e9b9b75b121)" class="food-img">
-        <div class="p-6">
-          <h4 class="food-title">Chili Cheese Tops</h4>
-          <p class="food-price">45 kr.</p>
-        </div>
+    </div>
+    <div class="food-card">
+      <img src="[images.unsplash.com](https://images.unsplash.com/photo-1598514980878-4e9b9b75b121)" class="food-img">
+      <div class="p-6">
+        <h4 class="food-title">Chili Cheese Tops</h4>
+        <p class="food-price">45 kr.</p>
+        <button onclick="addToCart('Chili Cheese Tops', 45)" class="btn-red-small mt-4">Tilføj</button>
       </div>
     </div>
   </div>
-  <!-- DRINKS -->
-  <div id="drinks" class="menu-category">
-    <h3 class="cat-title">Drikkevarer</h3>
-    <div class="grid md:grid-cols-3 gap-10 mt-10">
-      <div class="food-card" onclick="addToCart('Coca-Cola 0,5L', 20)">
-        <img src="[images.unsplash.com](https://images.unsplash.com/photo-1613477277289-3f11872bcf13)" class="food-img">
-        <div class="p-6">
-          <h4 class="food-title">Coca-Cola</h4>
-          <p class="food-price">20 kr.</p>
-        </div>
+</section>
+<!-- DRIKKEVARER -->
+<section id="drinks" class="menu-section max-w-7xl mx-auto px-6 py-12">
+  <h3 class="cat-title">Drikkevarer</h3>
+  <div class="grid md:grid-cols-3 gap-10 mt-10">
+    <div class="food-card">
+      <img src="[images.unsplash.com](https://images.unsplash.com/photo-1613477277289-3f11872bcf13)" class="food-img">
+      <div class="p-6">
+        <h4 class="food-title">Coca-Cola 0,5 L</h4>
+        <p class="food-price">20 kr.</p>
+        <button onclick="addToCart('Coca-Cola', 20)" class="btn-red-small mt-4">Tilføj</button>
       </div>
-      <div class="food-card" onclick="addToCart('Fanta 0,5L', 20)">
-        <img src="[images.unsplash.com](https://images.unsplash.com/photo-1613477277289-3f11872bcf13)" class="food-img">
-        <div class="p-6">
-          <h4 class="food-title">Fanta</h4>
-          <p class="food-price">20 kr.</p>
-        </div>
+    </div>
+    <div class="food-card">
+      <img src="[images.unsplash.com](https://images.unsplash.com/photo-1613477277289-3f11872bcf13)" class="food-img">
+      <div class="p-6">
+        <h4 class="food-title">Fanta 0,5 L</h4>
+        <p class="food-price">20 kr.</p>
+        <button onclick="addToCart('Fanta', 20)" class="btn-red-small mt-4">Tilføj</button>
       </div>
     </div>
   </div>
 </section>
 <!-- FOOTER -->
-<footer class="bg-gray-100 py-10 mt-20 text-center text-gray-700">
-  <p class="font-semibold text-lg">Chili Kebab Roskilde</p>
+<footer class="bg-gray-100 py-10 text-center text-gray-700 mt-20">
+  <p class="text-lg font-bold">Chili Kebab Roskilde</p>
   <p>Stændertorvet 12, 4000 Roskilde</p>
   <p>Tlf: +45 12 34 56 78</p>
 </footer>
-<!-- CART + MODAL (shared with index) -->
+<!-- CART -->
 <div class="cart-overlay" onclick="toggleCart()"></div>
 <div id="cart" class="cart-panel">
   <h3 class="text-3xl font-bold text-red-600 mb-4">Din kurv</h3>
@@ -143,6 +156,5 @@
   <p class="text-xl font-bold">Total: <span id="total">0</span> kr.</p>
   <a href="checkout.html" class="btn-red block text-center w-full mt-6 py-4 text-xl rounded-lg">Gå til betaling</a>
 </div>
-<div id="product-modal" class="product-modal hidden"></div>
 </body>
 </html>
