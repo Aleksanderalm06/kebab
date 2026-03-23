@@ -102,6 +102,32 @@ body {
 }
 body.cart-open .cart-overlay { display: block; }
 body.cart-open #cart { transform: translateX(0); }
+/* CART ITEMS */
+.cart-item {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.remove-btn {
+  background: #c1121f;
+  color: white;
+  border: none;
+  border-radius: 50%;
+  width: 28px;
+  height: 28px;
+  font-size: 18px;
+  line-height: 1;
+  cursor: pointer;
+  flex-shrink: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: 0.2s;
+}
+.remove-btn:hover {
+  background: #a50f1a;
+  transform: scale(1.1);
+}
 /* KNAPPER */
 .btn-red {
   background: #c1121f;
